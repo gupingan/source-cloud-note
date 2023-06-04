@@ -31,33 +31,33 @@ python3 manage.py runserver
 
 1. 主页
 
-![image-20230604173633519](/home/ronan/.config/Typora/typora-user-images/image-20230604173633519.png)
+![image-20230604173633519](./images/image-20230604173633519.png)
 
-![image-20230604173407826](/home/ronan/.config/Typora/typora-user-images/image-20230604173407826.png)
+![image-20230604173407826](./images/image-20230604173407826.png)
 
 2. 注册页面
 
-![image-20230604173433531](/home/ronan/.config/Typora/typora-user-images/image-20230604173433531.png)
+![image-20230604173433531](./images/image-20230604173433531.png)
 
 3. 登录页面
 
-![image-20230604173514636](/home/ronan/.config/Typora/typora-user-images/image-20230604173514636.png)
+![image-20230604173514636](./images/image-20230604173514636.png)
 
-![image-20230604173549599](/home/ronan/.config/Typora/typora-user-images/image-20230604173549599.png)
+![image-20230604173549599](./images/image-20230604173549599.png)
 
 
 
-![image-20230604173607521](/home/ronan/.config/Typora/typora-user-images/image-20230604173607521.png)
+![image-20230604173607521](./images/image-20230604173607521.png)
 
 4. 笔记根目录
 
-![image-20230604173747682](/home/ronan/.config/Typora/typora-user-images/image-20230604173747682.png)
+![image-20230604173747682](./images/image-20230604173747682.png)
 
 5. markdown笔记
 
-![image-20230604173844760](/home/ronan/.config/Typora/typora-user-images/image-20230604173844760.png)
+![image-20230604173844760](./images/image-20230604173844760.png)
 
-![image-20230604173859088](/home/ronan/.config/Typora/typora-user-images/image-20230604173859088.png)
+![image-20230604173859088](./images/image-20230604173859088.png)
 
 # 项目开发大致流程
 
