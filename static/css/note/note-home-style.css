@@ -1,0 +1,230 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+}
+
+.top-bar {
+    background-color: #fff;
+    color: #000;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px #ccc;
+    align-items: center;
+}
+
+.top-button-container {
+    position: relative;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.top-button {
+    height: 100%;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+.user-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.logout-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 16px 20px;
+}
+
+.folder {
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.folder:hover {
+    background-color: #eee;
+}
+
+.folder-icon {
+    user-select: none;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.folder-name {
+    text-align: center;
+}
+
+/* 下拉菜单样式 */
+.user-info>.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 32px);
+    background-color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0px 0px 10px #ccc;
+    display: none;
+}
+
+.dropdown-menu-item {
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: #000;
+    padding: 8px 2px;
+}
+
+.dropdown-menu-item:hover {
+    background-color: #eee;
+}
+
+/* 创建文件的弹窗样式 */
+.popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f2f5fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    display: none;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.popup-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.popup-input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.popup-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #d1d8e3;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9fbff;
+    outline: none;
+}
+
+.popup-select {
+    padding: 12px;
+    border: 1px solid #d1d8e3;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9fbff;
+    outline: none;
+    margin-left: 10px;
+}
+
+
+.popup-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.error-message {
+    margin-right: 10px;
+    color: red;
+    font-size: 18px;
+}
+
+.popup-button-wrapper {
+    margin-left: auto;
+}
+
+
+.popup-button {
+    top: 0;
+    right: 0;
+    background-color: #2979ff;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.popup-button:hover {
+    background-color: #1c67e6;
+}
+
+/* 右键菜单样式 */
+.context-menu {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px 0;
+    width: 120px;
+    z-index: 9999;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #ccc;
+}
+
+.context-menu-item {
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.context-menu-item:hover {
+    background-color: #f2f2f2;
+}

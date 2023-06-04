@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <title>Page Not Found</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .illustration {
+            margin-top: 50px;
+        }
+
+        .illustration img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #1565c0;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0d47a1;
+        }
+
+        .a-link {
+            color: #1565c0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .a-link:hover {
+            color: #2196f3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Oops! Page Not Found</h1>
+        <p>The page you are looking for could not be found.</p>
+        <p>Please check the URL or go back to the <a class="a-link" href="{% url 'web_home' %}">homepage</a>.</p>
+        <div class="illustration">
+            <img src='{% static "img/404.png" %}' alt="404 Illustration">
+        </div>
+        <a class="cta-button" href="{% url 'web_home' %}">Go to Homepage</a>
+    </div>
+</body>
+
+</html>

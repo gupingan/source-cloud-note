@@ -1,0 +1,17 @@
+<div class="popup-container" id="createPopup">
+    <h2 class="popup-title">创建笔记或文件夹</h2>
+    <div class="popup-input-container">
+        <input type="text" class="popup-input" id="popupInput" placeholder="请输入文件（夹）名">
+        <select class="popup-select" id="popupSelect">
+            <option value="folder">文件夹</option>
+            <option value="markdown">Markdown文件</option>
+        </select>
+    </div>
+    <div class="popup-button-container">
+        <span id="create-error-message" class="error-message"></span>
+        <div class="popup-button-wrapper">
+            <button class="popup-button" onclick="createItem()">确定</button>
+            <button class="popup-button" onclick="closePopup('#createPopup')">关闭</button>
+        </div>
+    </div>
+</div>

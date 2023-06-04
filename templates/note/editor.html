@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'wheels/editor.md/css/editormd.min.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .metadata {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        #editor {
+            margin-bottom: 20px;
+        }
+
+        #preview {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .button-container {
+            text-align: right;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #2979ff;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-left: 10px;
+        }
+
+        .button:hover {
+            background-color: #1c67e6;
+        }
+    </style>
+</head>
+
+<body>
+    {% csrf_token %}
+    <div class="container">
+        <h1>{{ title }}</h1>
+        <div class="metadata">
+            <p>创建时间：{{ created_time }}</p>
+            <p>更新时间：{{ updated_time }}</p>
+        </div>
+        <textarea id="pseudo-content" style="display: none;">{{ content }}</textarea>
+        <div id="editor"></div>
+        <div class="button-container">
+            <button class="button" onclick="saveNote()">保存</button>
+            <button class="button" onclick="goBack()">返回</button>
+        </div>
+    </div>
+
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+    <script src="{% static 'wheels/editor.md/editormd.min.js' %}"></script>
+    <script src="{% static 'wheels/popup-1.0.0.min.js' %}"></script>
+    <script>
+        function postAPI(url, data) {
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result);
+                    if (result.status === 'ok') {
+                        showPopup("保存成功");
+                    } else if (result.status === 'error') {
+                        let errorMessage = result.message;
+                        showPopup(errorMessage);
+
+                    }
+
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+    <script type="text/javascript">
+        var editor = editormd("editor", {
+            path: "{% static 'wheels/editor.md/lib/' %}",
+            height: "600px",
+            toolbarIcons: "full",
+            onload: function () {
+                var content = $('#pseudo-content').val();
+                editor.setValue(content);
+                this.previewing();
+            }
+        });
+
+        function saveNote() {
+            data = {
+                'id': '{{ note.id }}',
+                'folder-id': '{{ folder.id }}',
+                'content': editor.getValue(),
+            };
+            postAPI('{% url "note:api_modify_content" %}', data);
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+
+    </script>
+</body>
+
+</html>

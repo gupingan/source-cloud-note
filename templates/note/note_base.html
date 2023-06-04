@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>源笔记 - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/note/note-home-style.css' %}">
+</head>
+
+<body>
+    {% csrf_token %}
+    <div class="top-bar">
+        <div class="top-button-container">
+            {% block top_buttons %}
+            {% endblock %}
+        </div>
+        <div class="user-info">
+            <div class="user-avatar">
+                <img src="{% static 'img/default.png' %}" alt="User Avatar">
+            </div>
+            <div class="username">Welcome, {{ user.username }}</div>
+            <div class="dropdown-menu">
+                <div class="dropdown-menu-item">修改资料</div>
+                <div class="dropdown-menu-item">退出登录</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <canvas id="particles"></canvas>
+
+        {% block folders %}
+        {% endblock %}
+
+        {% block notes %}
+        {% endblock %}
+    </div>
+
+    {% block popups %}
+    {% endblock %}
+
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+    <script src="{% static 'wheels/particles-1.0.0.min.js' %}"></script>
+    <script src="{% static 'wheels/popup-1.0.0.min.js' %}"></script>
+    <script src="{% static 'js/note-home-main.js' %}"></script>
+    <script src="{% static 'js/note-home-operate.js' %}"></script>
+    <script>
+        noteHomeParams.call_logout = '{% url "user:call_logout" %}';
+        noteHomeParams.login = '{% url "user:login" %}';
+        operateParams.noteHomeUrl = '{% url "note:re_home" %}' + "{{ folder_id }}/";
+        operateParams.reHomeUrl = '{% url "note:re_home" %}';
+        operateParams.folderId = '{{ folder_id }}';
+        operateParams.parentFolderId = "{{ parent_folder_id }}";
+        operateParams.createFolderUrl = '{% url "note:create_folder" %}';
+        operateParams.createNoteUrl = '{% url "note:create_note" %}';
+        operateParams.deleteUrl = '{% url "note:api_delete" %}';
+        operateParams.renameUrl = '{% url "note:api_rename" %}';
+    </script>
+
+</body>
+
+</html>

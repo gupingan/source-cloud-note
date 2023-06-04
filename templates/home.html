@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>源笔记 - 云笔记平台</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home-style.css' %}">
+</head>
+
+<body>
+    <div class="background">
+        <!-- 背景素材 -->
+        <img src="{% static 'img/home-background.jpg' %}" alt="背景图片">
+        <div class="home-background"></div>
+
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>欢迎使用源笔记</h1>
+            <p>一个纯净的云笔记平台</p>
+            <div class="cta-buttons">
+                <a href="{% url 'user:register' %}" target="_self" class="cta-button">立即注册</a>
+                {% if is_login %}
+                <a href="{% url 'note:re_home' %}" target="_blank" class="cta-button">前往笔记</a>
+                {% else %}
+                <a href="{% url 'user:login' %}" target="_self" class="cta-button">前往登录</a>
+                {% endif %}
+            </div>
+        </header>
+
+        <section class="about-section">
+            <h2>关于应用</h2>
+            <p>源笔记是一款基于Django开发的云笔记平台，提供便捷的笔记管理同步功能，支持创建文件夹和markdown文件，使用了第三方强大的markdown编辑器——<a class="a-link" target="_blank" href="https://github.com/pandao/editor.md">Editor.md</a>，整体界面简约大气。</p>
+            <p>致力于为用户提供高效、安全的笔记存储，助力用户更好地组织和管理自己的笔记内容，适用于个人和团队。</p>
+        </section>
+
+        <footer>
+            <p>版权所有 &copy; 2023 源笔记 个人开发</p>
+            <p>备案号：XXXXXX</p>
+        </footer>
+    </div>
+
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+
+</body>
+
+</html>

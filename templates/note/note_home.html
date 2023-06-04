@@ -1,0 +1,37 @@
+{% extends 'note_base.html' %}
+
+{% block title %}
+主页
+{% endblock %}
+
+{% block top_buttons %}
+<div class="top-button">返回上一级</div>
+<div class="top-button">添加项目</div>
+{% endblock %}
+
+{% block folders %}
+{% for folder in folders %}
+    {% if folder.parent_folder.id == folder_id and folder.is_exist %}
+        <div class="folder" data-folder-id="{{ folder.id }}">
+            <span class="folder-icon">&#128194;</span>
+            <div class="folder-name">{{ folder.title }}</div>
+        </div>
+    {% endif %}
+{% endfor %}
+{% endblock %}
+
+{% block notes %}
+{% for note in notes %}
+    {% if note.folder.id == folder_id and note.is_exist %}
+        <div class="folder" data-note-id="{{ note.id }}">
+            <span class="folder-icon">&#128190;</span>
+            <div class="folder-name">{{ note.title }}</div>
+        </div>
+    {% endif %}
+{% endfor %}
+{% endblock %}
+
+{% block popups %}
+{% include 'create_popup.html' %}
+{% include 'rename_popup.html' %}
+{% endblock %}

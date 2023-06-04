@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    font-family: Arial, sans-serif;
+    background-image:url('../../img/002739-16766512598779.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    min-width: 32vw;
+    margin: 0 auto;
+    padding: 20px;
+    opacity: 0.88;
+    background-color: white;
+    box-shadow: 0px 0px 10px #ccc;
+    border-radius: 5px;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+form label {
+    flex: 1;
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    height: 44px;
+    padding: 0 16px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+    border-color: rgba(0, 123, 255, 0.5);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+form button[type="submit"] {
+    display: block;
+    margin-left: 8px;
+    width: 100%;
+    height: 44px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+    background-color: #0069d9;
+    border: 1px solid #0069d9;
+}
+
+form .login {
+    display: block;
+    margin-right: 8px;
+    width: 100%;
+    height: 44px;
+    background-color: #ffffff;
+    color: #007bff;
+    border: 1px solid #007bff;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form .login:hover {
+    background-color: #f5f5f5;
+    color: #007bff;
+    border: 1px solid #0069d9;
+}
+
+.error-message {
+    flex: 1;
+    color: #ff0000;
+    margin-bottom: 10px;
+    text-align: end;
+}
+
+.error-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../../img/error-icon.png');
+    background-size: cover;
+    margin-right: 5px;
+}
+
+.input_title {
+    display: flex;
+}
+
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #ccc;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
