@@ -1,3 +1,7 @@
+# 作者的话
+
+学了Django框架的部分知识，在学习的过程中，看到老师教了这个项目，但是非常的简陋，于是自己重新弄，想开发得更好一点，忙于找工作的原因，这个项目就暂时停在这里了，唉，后端学的比前端好，对CSS真的很头大，所以页面做得很简陋，整个网站也很小白，见谅……
+
 # 项目部署
 
 ## Debug=True
@@ -23,7 +27,39 @@ python3 manage.py runserver
 2. 配置静态文件的访问。
 3. 需要反复调试，保证网站正常运行。
 
-# 项目开发的大致流程
+# 源笔记界面
+
+1. 主页
+
+![image-20230604173633519](/home/ronan/.config/Typora/typora-user-images/image-20230604173633519.png)
+
+![image-20230604173407826](/home/ronan/.config/Typora/typora-user-images/image-20230604173407826.png)
+
+2. 注册页面
+
+![image-20230604173433531](/home/ronan/.config/Typora/typora-user-images/image-20230604173433531.png)
+
+3. 登录页面
+
+![image-20230604173514636](/home/ronan/.config/Typora/typora-user-images/image-20230604173514636.png)
+
+![image-20230604173549599](/home/ronan/.config/Typora/typora-user-images/image-20230604173549599.png)
+
+
+
+![image-20230604173607521](/home/ronan/.config/Typora/typora-user-images/image-20230604173607521.png)
+
+4. 笔记根目录
+
+![image-20230604173747682](/home/ronan/.config/Typora/typora-user-images/image-20230604173747682.png)
+
+5. markdown笔记
+
+![image-20230604173844760](/home/ronan/.config/Typora/typora-user-images/image-20230604173844760.png)
+
+![image-20230604173859088](/home/ronan/.config/Typora/typora-user-images/image-20230604173859088.png)
+
+# 项目开发大致流程
 
 1. 创建项目`source_cloud_note`：
 
@@ -90,3 +126,11 @@ python3 manage.py runserver
    - 当用户删除文件或者文件夹时，访问 `http://127.0.0.1:8000/note/api/delete`，定义一个视图函数`delete_api`处理请求。
    - 当用户重命名文件或者文件夹时，访问 `http://127.0.0.1:8000/note/api/rename`，定义一个视图函数`rename_api`处理请求。
    - 当用户修改笔记内容并保存时，访问 `http://127.0.0.1:8000/note/api/content/modify`，定义一个视图函数`modify_content_api`处理请求。
+
+# 感谢
+
+1. [Python](https://www.python.org/)
+2. [Django](https://www.djangoproject.com/)
+3. [jQuery](https://jquery.com/)
+4. [Editor.md](https://github.com/pandao/editor.md)
+
