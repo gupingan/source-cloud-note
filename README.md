@@ -7,6 +7,9 @@
 ## Debug=True
 
 1. 修改`settings.py`中的数据库配置，连接MySQL数据库。
+```mysql
+CREATE DATABASE `库名` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
 
 2. 迁移模型到数据库：
 

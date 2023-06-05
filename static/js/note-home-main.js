@@ -13,8 +13,9 @@ const $dropdownMenu = $(".dropdown-menu");
 $userInfo.on("click", toggleDropdownMenu);
 $userInfo.on("mousemove", openDropdownMenu);
 $(".dropdown-menu").on("mouseleave", closeDropdownMenu);
+$(".content").on("click", closeDropdownMenu);
 $("#particles").on("click", closeDropdownMenu);
-$(".top-bar").on("click", closeDropdownMenu);
+$(document).on("click", closeDropdownMenu);
 
 // 切换下拉菜单的显示状态
 function toggleDropdownMenu() {
